@@ -1,9 +1,11 @@
 .page {
   background-image: var(--background-image);
+  background-color: var(--bg-color);
   font-family: var(--main-font);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .header {
@@ -16,13 +18,17 @@
   position: relative;
 }
 
+.item {
+  display: grid;
+  gap: 10px;
+}
+
 .header__theme-menu-button {
   color: var(--decorated-color, #FF0070);
   font-family: var(--main-font);
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
-  letter-spacing: 0%;
   text-align: center;
   background-color: transparent;
   border: none;
@@ -32,6 +38,7 @@
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--decorated-color);
+  pointer-events: none; 
 }
 
 .header__theme-menu-button:focus {
@@ -70,7 +77,6 @@
 
 .rec {
   color: var(--decorated-color);
-  font-family: var(--main-font);
   font-size: 18px;
   font-weight: 400;
   line-height: 25px;
@@ -101,7 +107,6 @@
 
 .header__title {
   color: var(--title-color, #DB00FF);
-  font-family: var(--main-font);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: 700;
   line-height: 82.5%;
@@ -110,7 +115,6 @@
 
 .header__title-accent {
   color: var(--accent-title-color, #000028);
-  font-family: var(--main-font,);
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
@@ -119,7 +123,6 @@
 
 .title {
   color: var(--decor-title);
-  font-family: IBM Plex Mono;
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
@@ -131,7 +134,6 @@
   font-weight: 700;
   line-height: 23.4px;
   background-color: var(--accent-color);
-  margin-bottom: 10px;
 }
 
 .text {
@@ -157,22 +159,14 @@
   gap: 20px;
 }
 
-/* .accent__title {
-  margin-bottom: 10px;
-} */
-
 .thin__title {
   font-size: 18px;
   font-weight: 400;
   line-height: 23.4px;
 }
 
-.how__accent-title {
-  margin-bottom: 0;
-}
-
-.how__text {
-  margin-top: 10px;
+.how__list {
+  margin-top: 20px;
 }
 
 .image {
@@ -211,6 +205,17 @@
   text-shadow: 2px 2px var(--accent-color);
 }
 
+.text__link:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.text__link:focus {
+  outline: none;
+}
+
+.text__link:focus-visible {
+  outline: 1px solid currentColor;
+}
 
   @media  (min-width: 768px) {
     .header {
@@ -314,9 +319,9 @@
     
   @media (min-width: 1024px) {
 
-      .header__title {
-        text-shadow: 4px 4px var(--shadow-color);
-      }
+    .header__title {
+      text-shadow: 4px 4px var(--shadow-color);
+    }
 
     .header__title-accent {
       min-width: 491px;
@@ -332,7 +337,6 @@
       flex-direction: row;
       justify-content: center;
       align-self: start;
-      gap: 13px;
     }
 
     .why__title {
@@ -346,6 +350,7 @@
     .what__list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      align-items: start;
     }
 
     .how__title {
