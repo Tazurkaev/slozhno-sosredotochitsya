@@ -180,6 +180,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .footer {
@@ -248,18 +249,6 @@
     .rec {
       right: 48px;
       top: 20px;
-    }
-
-    .rec::before {
-      position: absolute;
-      content: '';
-      width: 9px;
-      height: 9px;
-      background-color: var(--decorated-color);
-      border-radius: 100%;
-      box-shadow: 0 0 4px 2px var(--decorated-color);
-      right: -19px;
-      top: 8px;
     }
 
     .main {
